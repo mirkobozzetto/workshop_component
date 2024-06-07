@@ -1,4 +1,6 @@
 import { ReactSvg } from "./ReactSvg";
+// import { ShoppingBasket, User } from "lucide-react";
+
 const Header = () => {
   return (
     <header className="flex items-center py-4 w-full">
