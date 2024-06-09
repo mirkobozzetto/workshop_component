@@ -10,10 +10,10 @@ const Header = () => {
         <span>ReactJourney</span>
       </h1>
       <div className="flex items-center gap-2 ml-auto">
-        <Button>
+        <Button variant="ghost">
           <ShoppingBasket size={24} />
         </Button>
-        <Button>
+        <Button variant="ghost">
           <User size={24} />
         </Button>
       </div>
