@@ -1,4 +1,5 @@
 import { ShoppingBasket, User } from "lucide-react";
+import Button from "./Button";
 import { ReactSvg } from "./ReactSvg";
 
 const Header = () => {
@@ -9,12 +10,12 @@ const Header = () => {
         <span>ReactJourney</span>
       </h1>
       <div className="flex items-center gap-2 ml-auto">
-        <button>
+        <Button>
           <ShoppingBasket size={24} />
-        </button>
-        <button>
+        </Button>
+        <Button>
           <User size={24} />
-        </button>
+        </Button>
       </div>
     </header>
   );
