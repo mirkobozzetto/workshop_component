@@ -11,7 +11,7 @@ export default function Home() {
     <main className="flex flex-col m-auto px-4 max-w-4xl h-full">
       <Header />
       <div className="flex max-lg:flex-col flex-1 gap-4 mt-8 mb-4 py-2 overflow-auto">
-        <MenuFilter />
+        <MenuFilter filters={filters} />
       </div>
     </main>
     //
