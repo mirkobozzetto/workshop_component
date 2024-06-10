@@ -2,7 +2,7 @@ import { cva } from "class-variance-authority";
 
 type ButtonProps = {
   children: React.ReactNode;
-  variant?: "default" | "ghost";
+  variant?: "default" | "ghost" | "secondary";
   className?: string;
 };
 
@@ -14,6 +14,7 @@ export const buttonVariants = cva(
         default: "bg-green-950 text-gray-50 shadow hover:bg-gray-800",
         ghost:
           "bg-transparent text-gray-950 hover:bg-gray-200 active:bg-gray-300",
+        secondary: "bg-gray-200 text-gray-950 hover:bg-gray-300",
       },
     },
     defaultVariants: {

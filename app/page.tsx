@@ -19,7 +19,7 @@ export default function Home({ searchParams }: HomeProps) {
       <Header />
       <div className="flex max-lg:flex-col flex-1 gap-4 mt-8 mb-4 py-2 overflow-auto">
         <MenuFilter currentFilter={currentFilter} filters={filters} />
-        <div className="grid grid-cols-1">
+        <div className="grid grid-cols-1 mr-auto ml-12">
           {REACT_CARDS.filter((card) => {
             if (!currentFilter) return true;
             return card.category === currentFilter;
