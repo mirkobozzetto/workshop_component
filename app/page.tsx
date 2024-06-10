@@ -11,7 +11,7 @@ export default function Home({ searchParams }: HomeProps) {
   const filters = [
     ...(new Set(REACT_CARDS.map((card) => card.category)) as Iterable<string>),
   ];
-  console.log({ currentFilter });
+  // console.log({ currentFilter });
 
   return (
     <main className="flex flex-col m-auto px-4 max-w-4xl h-full">
