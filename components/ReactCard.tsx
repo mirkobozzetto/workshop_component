@@ -1,6 +1,6 @@
-import { PlusCircle } from "lucide-react";
+import { BookOpenText, PlusCircle } from "lucide-react";
 import Link from "next/link";
-import Button from "./Button";
+import Button, { buttonVariants } from "./Button";
 
 import { ReactSvg } from "./ReactSvg";
 
@@ -25,13 +25,24 @@ const ReactCard = ({ card }: { card: CardProps }) => {
         <p className="line-clamp-1 text-gray-400 text-start text-xs">
           {card.category}
         </p>
-        <Link href={card.url}>{card.url}</Link>
-        <Button
-          className="hover:bg-gray-150 no-outline focus:outline-none focus:ring-0 focus:ring-offset-0 cursor-pointer"
-          variant="secondary"
-        >
-          <PlusCircle size={16} />
-        </Button>
+        <div className="flex ml-auto">
+          <Link
+            href={card.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${buttonVariants({
+              variant: "secondary",
+            })}  hover:bg-gray-150 no-outline focus:outline-none focus:ring-0 focus:ring-offset-0 cursor-pointer mr-1`}
+          >
+            <BookOpenText size={16} />
+          </Link>
+          <Button
+            className="hover:bg-gray-150 no-outline focus:outline-none focus:ring-0 focus:ring-offset-0 cursor-pointer"
+            variant="secondary"
+          >
+            <PlusCircle size={16} />
+          </Button>
+        </div>
       </div>
     </div>
   );
