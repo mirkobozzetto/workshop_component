@@ -28,9 +28,9 @@ const LinkItem = ({ href, isActive, children }: LinkItemProps) => (
 
 const MenuItem = ({ children }: { children: React.ReactNode }) => {
   return (
-    <aside className="flex lg:flex-col flex-wrap gap-4 w-full lg:max-w-[200px]">
+    <nav className="left-12 fixed flex lg:flex-col flex-wrap gap-4 mt-2.5 w-full lg:max-w-[200px]">
       {children}
-    </aside>
+    </nav>
   );
 };
 
