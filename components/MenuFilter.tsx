@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type StyledLinkProps = {
+type LinkItemProps = {
   href: string;
   children: React.ReactNode;
 };
@@ -9,7 +9,7 @@ type MenuFilterProps = {
   filters: string[];
 };
 
-const StyledLink = ({ href, children }: StyledLinkProps) => (
+const LinkItem = ({ href, children }: LinkItemProps) => (
   <Link
     href={href}
     className="hover:bg-gray-200 px-2 py-1 rounded-md capitalize transition-colors"
@@ -29,13 +29,13 @@ const MenuItem = ({ children }: { children: React.ReactNode }) => {
 const MenuFilter = ({ filters }: MenuFilterProps) => {
   return (
     <MenuItem>
-      <StyledLink key="all" href="/?filter=all">
+      <LinkItem key="filter" href="/?filter=all">
         All
-      </StyledLink>
+      </LinkItem>
       {filters.map((filter) => (
-        <StyledLink key={filter} href={`/?filter=${filter}`}>
+        <LinkItem key={filter} href={`/?filter=${filter}`}>
           {filter}
-        </StyledLink>
+        </LinkItem>
       ))}
     </MenuItem>
   );
