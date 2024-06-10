@@ -1,8 +1,10 @@
+import clsx from "clsx";
 import Link from "next/link";
 
 type LinkItemProps = {
   href: string;
   children: React.ReactNode;
+  isActive: boolean;
 };
 
 type MenuFilterProps = {
@@ -10,10 +12,15 @@ type MenuFilterProps = {
   currentFilter: string | string[] | undefined;
 };
 
-const LinkItem = ({ href, children }: LinkItemProps) => (
+const LinkItem = ({ href, isActive, children }: LinkItemProps) => (
   <Link
     href={href}
-    className="hover:bg-gray-200 px-2 py-1 rounded-md capitalize transition-colors"
+    className={clsx(
+      "hover:bg-gray-200 px-2 py-1 rounded-md capitalize transition-colors",
+      {
+        "font-bold": isActive,
+      }
+    )}
   >
     {children}
   </Link>
@@ -27,14 +34,18 @@ const MenuItem = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const MenuFilter = ({ filters }: MenuFilterProps) => {
+const MenuFilter = ({ filters, currentFilter }: MenuFilterProps) => {
   return (
     <MenuItem>
-      <LinkItem key="filter" href="/">
+      <LinkItem isActive={!currentFilter} key="filter" href="/">
         All
       </LinkItem>
       {filters.map((filter) => (
-        <LinkItem key={filter} href={`/?filter=${filter}`}>
+        <LinkItem
+          isActive={filter === currentFilter}
+          key={filter}
+          href={`/?filter=${filter}`}
+        >
           {filter}
         </LinkItem>
       ))}
