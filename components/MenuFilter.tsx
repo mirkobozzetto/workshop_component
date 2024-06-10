@@ -18,7 +18,7 @@ const LinkItem = ({ href, isActive, children }: LinkItemProps) => (
     className={clsx(
       "hover:bg-gray-200 px-2 py-1 rounded-md capitalize transition-colors",
       {
-        "font-bold": isActive,
+        "font-semibold": isActive,
       }
     )}
   >
