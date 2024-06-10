@@ -52,4 +52,5 @@ const MenuFilter = ({ filters, currentFilter }: MenuFilterProps) => {
     </MenuItem>
   );
 };
+
 export default MenuFilter;
