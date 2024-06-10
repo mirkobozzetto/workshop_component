@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import MenuFilter from "@/components/MenuFilter";
 import { REACT_CARDS } from "@/data/cardsData";
+import ReactCard from "../components/ReactCard";
 
 type HomeProps = {
   searchParams: { [key: string]: string | string[] | undefined };
@@ -18,6 +19,14 @@ export default function Home({ searchParams }: HomeProps) {
       <Header />
       <div className="flex max-lg:flex-col flex-1 gap-4 mt-8 mb-4 py-2 overflow-auto">
         <MenuFilter currentFilter={currentFilter} filters={filters} />
+        <div className="grid grid-cols-1">
+          {REACT_CARDS.filter((card) => {
+            if (!currentFilter) return true;
+            return card.category === currentFilter;
+          }).map((card) => (
+            <ReactCard key={card.name} card={card} />
+          ))}
+        </div>
       </div>
     </main>
   );
