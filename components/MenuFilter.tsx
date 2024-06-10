@@ -29,7 +29,7 @@ const MenuItem = ({ children }: { children: React.ReactNode }) => {
 const MenuFilter = ({ filters }: MenuFilterProps) => {
   return (
     <MenuItem>
-      <LinkItem key="filter" href="/?filter=all">
+      <LinkItem key="filter" href="/">
         All
       </LinkItem>
       {filters.map((filter) => (
