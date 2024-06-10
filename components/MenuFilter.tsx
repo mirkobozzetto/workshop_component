@@ -7,6 +7,7 @@ type LinkItemProps = {
 
 type MenuFilterProps = {
   filters: string[];
+  currentFilter: string | string[] | undefined;
 };
 
 const LinkItem = ({ href, children }: LinkItemProps) => (
