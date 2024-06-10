@@ -2,8 +2,13 @@ import Header from "@/components/Header";
 import MenuFilter from "@/components/MenuFilter";
 import { REACT_CARDS } from "@/data/cardsData";
 
-export default function Home({}) {
-  // const currentFilter = searchParams.filter;
+export default function Home({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  const currentFilter = searchParams.filter;
+  // console.log({ currentFilter });
   const filters = [
     ...(new Set(REACT_CARDS.map((card) => card.category)) as Iterable<string>),
   ];
