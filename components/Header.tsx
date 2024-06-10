@@ -9,7 +9,7 @@ const Header = () => {
         <ReactSvg size={32} />
         <span>ReactJourney</span>
       </h1>
-      <div className="flex items-center gap-2 ml-[75%]">
+      <div className="flex items-center gap-2 ml-[75vw]">
         <Button variant="ghost">
           <ShoppingBasket size={24} />
         </Button>
